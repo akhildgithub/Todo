@@ -35,8 +35,7 @@ setTimeout(() => {
       break;
     case '3':
       k = prompt('enter the key')
-      v = prompt('enter the value ')
-      localStorage.removeItem(k, v)
+      localStorage.removeItem(k)
       break;
     case '4':
       localStorage.clear()
