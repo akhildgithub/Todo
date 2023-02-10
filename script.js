@@ -1,8 +1,5 @@
 function items() {
   var text = 'Todos are '
-  // for (i in localStorage) {
-  //   text = text + localStorage.getItem(i)
-  // }
   for (var i = 0; i < localStorage.length; i++) {
     text = text + "<br>" + localStorage.key(i) + ' : ' + localStorage.getItem(localStorage.key(i));
   }
@@ -20,7 +17,7 @@ setTimeout(() => {
   switch (change) {
     case '1':
       k = prompt('enter the key')
-      v = prompt('edit the value ')
+      v = prompt('change the value ')
       for (var i = 0; i < localStorage.length; i++) {
         if (k == localStorage.key(i)) {
           localStorage.setItem(k, v)
@@ -30,17 +27,28 @@ setTimeout(() => {
       break;
     case '2':
       k = prompt('enter the key')
-      v = prompt('add the value ')
+      v = prompt('change the value ')
+      for (var i = 0; i < localStorage.length; i++) {
+        if (k == localStorage.key(i)) {
+          alert('this key already exists')
+          break;
+        }
+      }
       localStorage.setItem(k, v)
       break;
     case '3':
       k = prompt('enter the key')
+      for (var i = 0; i < localStorage.length; i++) {
+        if (k == localStorage.key(i)) {
       localStorage.removeItem(k)
+          break;
+        }
+      }
+          alert('there is no such key')
       break;
     case '4':
       localStorage.clear()
       break;
-
   }
   todos.innerHTML = items();
 }, 3000)
