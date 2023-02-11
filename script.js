@@ -5,10 +5,11 @@ edit.addEventListener("click", (e) => {
   let break1 = 0
   for (var i = 0; i < localStorage.length; i++) {
     if (k == localStorage.key(i)) {
+      if(!k=='' && !v==''){
       localStorage.setItem(k, v)
       break1++;
       break;
-    }
+    }}
   }
   if(k=='' || v=='')
     alert('Not provided required values')
