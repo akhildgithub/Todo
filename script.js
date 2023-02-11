@@ -18,36 +18,49 @@ setTimeout(() => {
     case '1':
       k = prompt('enter the key')
       v = prompt('change the value ')
+      let break1 = 0
       for (var i = 0; i < localStorage.length; i++) {
         if (k == localStorage.key(i)) {
           localStorage.setItem(k, v)
+          break1++;
           break;
         }
+      }
+      if (break1 == 0) {
+        alert('there is no such key')
       }
       break;
     case '2':
       k = prompt('enter the key')
-      v = prompt('change the value ')
+      v = prompt('add the value ')
+      let breaking = 0
       for (var i = 0; i < localStorage.length; i++) {
         if (k == localStorage.key(i)) {
           alert('this key already exists')
+          breaking++;
           break;
         }
       }
-      localStorage.setItem(k, v)
+      if (breaking == 0)
+        localStorage.setItem(k, v)
       break;
     case '3':
       k = prompt('enter the key')
       for (var i = 0; i < localStorage.length; i++) {
         if (k == localStorage.key(i)) {
-      localStorage.removeItem(k)
+          localStorage.removeItem(k);
           break;
         }
-      }
+        if (i == localStorage.length - 1) {
           alert('there is no such key')
+        }
+      }
       break;
     case '4':
-      localStorage.clear()
+      if (localStorage.length == 0)
+        alert('it\'s already empty')
+      else
+        localStorage.clear()
       break;
   }
   todos.innerHTML = items();
