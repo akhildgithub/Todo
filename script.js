@@ -6,7 +6,8 @@ edit.addEventListener("click", (e) => {
   for (var i = 0; i < localStorage.length; i++) {
     if (k == localStorage.key(i)) {
       if(!k=='' && !v==''){
-      localStorage.setItem(k, v)
+      localStorage.setItem(k, v);
+        key1.value='';value1.value=''
       break1++;
       break;
     }}
@@ -37,7 +38,8 @@ add.addEventListener("click", (e) => {
     alert('Not provided required values')
   else{ 
     if (breaking == 0)
-    localStorage.setItem(k, v)
+    localStorage.setItem(k, v);
+        key1.value='';value1.value=''
   }
   todos.innerHTML = items();
 })
@@ -50,6 +52,7 @@ delet.addEventListener("click", (e) => {
   for (var i = 0; i < localStorage.length; i++) {
     if (k == localStorage.key(i)) {
       localStorage.removeItem(k);
+        key1.value='';value1.value=''
       break;
     }
     if (i == localStorage.length - 1) {
@@ -65,6 +68,7 @@ clear1.addEventListener("click", (e) => {
     alert('It\'s already empty')
   else
     localStorage.clear();
+        key1.value='';value1.value=''
   todos.innerHTML = items();
 })
 
