@@ -9,3 +9,9 @@ a{
 p{
   font-size:18px;
 }
+.form-label{
+  font-size:22px;
+}
+input{
+  height:5%
+}
